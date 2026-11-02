@@ -1,5 +1,5 @@
 body { margin: 0; background: var(--color-surface-page); color: var(--color-text-primary); font-family: var(--font-family-secondary); }
-.app { max-width: 960px; margin: 0 auto; padding: 24px 16px 64px; display: grid; gap: 24px; }
+.app { max-width: 960px; margin: 0 auto; padding: var(--spacing-lg) var(--spacing-md) var(--spacing-4xl); display: grid; gap: var(--spacing-lg); }
 .app__header { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap; }
 .app__row { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; }
 .app__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--spacing-md); }
