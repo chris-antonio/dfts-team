@@ -3,4 +3,4 @@ body { margin: 0; background: var(--surface-neutral-default); color: var(--conte
 .app__header { display: flex; align-items: center; justify-content: space-between; gap: var(--spacing-md); flex-wrap: wrap; }
 .app__row { display: flex; gap: var(--spacing-sm); flex-wrap: wrap; align-items: center; }
 .app__grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: var(--spacing-md); }
-.legacy-toolbar { display: flex; gap: var(--spacing-xs); align-items: center; flex-wrap: wrap; padding: var(--spacing-sm); border: var(--border-width-thin) dashed currentColor; border-radius: var(--radius-md); }
+

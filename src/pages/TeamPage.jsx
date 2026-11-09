@@ -1,8 +1,7 @@
 import React from "react";
 import {
-  Table, Modal, Button, TextField, Alert, Filter, Avatar, Chip, Menu,
+  Table, Modal, Button, TextField, Select, Link, Alert, Filter, Avatar, Chip, Menu,
 } from "@chris-antonio/dfts-react";
-import LegacyToolbar from "../legacy/LegacyToolbar.jsx";
 
 const MEMBERS = [
   { id: 1, name: "Amara Chen", role: "Product Designer", team: "design", status: "Active" },
@@ -15,6 +14,8 @@ export default function TeamPage({ toast }) {
   const [filters, setFilters] = React.useState(new Set());
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState("");
+  const [query, setQuery] = React.useState("");
+  const [sort, setSort] = React.useState("name");
 
   const toggle = (k) => setFilters((f) => { const n = new Set(f); n.has(k) ? n.delete(k) : n.add(k); return n; });
   const rows = MEMBERS.filter((m) => !filters.size || filters.has(m.team));
@@ -53,8 +54,13 @@ export default function TeamPage({ toast }) {
         rows={rows}
       />
 
-      {/* Not migrated to DFTS yet: still plain HTML controls */}
-      <LegacyToolbar onSearch={(q) => toast("default", `Searching “${q}”`)} />
+      <form className="app__row" onSubmit={(e) => { e.preventDefault(); toast("default", `Searching \u201c${query}\u201d`); }}>
+        <TextField id="team-search" type="search" label="Search" leadingIcon="search" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <Select id="team-sort" label="Sort by" options={[{ value: "name", label: "Name" }, { value: "role", label: "Role" }]} value={sort} onChange={setSort} />
+        <Button type="submit">Go</Button>
+        <Button type="button" variant="secondary" onClick={() => window.print()}>Print</Button>
+        <Link href="#help">Help</Link>
+      </form>
 
       <Modal
         open={open}
