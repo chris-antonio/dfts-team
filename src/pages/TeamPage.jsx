@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  Table, Modal, Button, TextField, Alert, FilterChip, Avatar, Chip, Menu,
+  Table, Modal, Button, TextField, Alert, Filter, Avatar, Chip, Menu,
 } from "@chris-antonio/dfts-react";
 import LegacyToolbar from "../legacy/LegacyToolbar.jsx";
 
@@ -20,13 +20,13 @@ export default function TeamPage({ toast }) {
   const rows = MEMBERS.filter((m) => !filters.size || filters.has(m.team));
 
   return (
-    <div style={{ display: "grid", gap: var(--spacing-md), paddingTop: var(--spacing-md) }}>
+    <div style={{ display: "grid", gap: "var(--spacing-md)", paddingTop: "var(--spacing-md)" }}>
       <Alert variant="info" title="Q4 planning">Add your teammates before Friday so capacity planning is accurate.</Alert>
 
       <div className="app__row">
-        <FilterChip label="Design" icon="palette" active={filters.has("design")} onToggle={() => toggle("design")} />
-        <FilterChip label="Engineering" icon="code" active={filters.has("eng")} onToggle={() => toggle("eng")} />
-        <FilterChip label="Content" icon="edit_note" active={filters.has("content")} onToggle={() => toggle("content")} />
+        <Filter label="Design" icon="palette" active={filters.has("design")} onToggle={() => toggle("design")} />
+        <Filter label="Engineering" icon="code" active={filters.has("eng")} onToggle={() => toggle("eng")} />
+        <Filter label="Content" icon="edit_note" active={filters.has("content")} onToggle={() => toggle("content")} />
         <span style={{ flex: 1 }} />
         <Menu
           trigger={<Button variant="secondary" trailingIcon="expand_more">Actions</Button>}

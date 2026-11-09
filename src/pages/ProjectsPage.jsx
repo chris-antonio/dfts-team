@@ -13,7 +13,7 @@ export default function ProjectsPage({ toast }) {
   const list = PROJECTS.filter((p) => showDone || p.progress < 100);
 
   return (
-    <div style={{ display: "grid", gap: var(--spacing-md), paddingTop: var(--spacing-md) }}>
+    <div style={{ display: "grid", gap: "var(--spacing-md)", paddingTop: "var(--spacing-md)" }}>
       <div className="app__row">
         <SegmentedControl
           segments={[{ value: "cards", label: "Cards" }, { value: "tiles", label: "Tiles" }]}
