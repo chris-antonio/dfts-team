@@ -20,7 +20,7 @@ export default function TeamPage({ toast }) {
   const rows = MEMBERS.filter((m) => !filters.size || filters.has(m.team));
 
   return (
-    <div style={{ display: "grid", gap: 16, paddingTop: 16 }}>
+    <div style={{ display: "grid", gap: var(--spacing-md), paddingTop: var(--spacing-md) }}>
       <Alert variant="info" title="Q4 planning">Add your teammates before Friday so capacity planning is accurate.</Alert>
 
       <div className="app__row">
